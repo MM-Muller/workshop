@@ -2,7 +2,7 @@
 
 ## 📌 Descrição do Projeto
 
-Desenvolvi uma aplicação backend utilizando Java com Spring Boot, integrada ao banco de dados NoSQL MongoDB. O projeto consistiu na criação de APIs RESTful para gerenciamento de usuários, postagens e comentários, com operações completas de CRUD. Trabalhei na modelagem de dados utilizando documentos, objetos aninhados e referências, garantindo a integridade e a performance dos dados. Implementei consultas personalizadas, filtros dinâmicos e integração eficiente entre os serviços e o banco. Além disso, apliquei boas práticas como uso de DTOs para otimizar o tráfego de dados, tratamento centralizado de exceções e arquitetura limpa, visando escalabilidade e manutenibilidade do sistema.
+Desenvolvi uma aplicação backend utilizando Java com Spring Boot, no curso de Java Orientado a Objetos, integrada ao banco de dados NoSQL MongoDB. O projeto consistiu na criação de APIs RESTful para gerenciamento de usuários, postagens e comentários, com operações completas de CRUD. Trabalhei na modelagem de dados utilizando documentos, objetos aninhados e referências, garantindo a integridade e a performance dos dados. Implementei consultas personalizadas, filtros dinâmicos e integração eficiente entre os serviços e o banco. Além disso, apliquei boas práticas como uso de DTOs para otimizar o tráfego de dados, tratamento centralizado de exceções e arquitetura limpa, visando escalabilidade e manutenibilidade do sistema.
 
 ---
 
