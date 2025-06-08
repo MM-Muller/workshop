@@ -1,6 +1,7 @@
 package com.mmuller.workshop.services;
 
 import com.mmuller.workshop.domain.User;
+import com.mmuller.workshop.dto.UserDTO;
 import com.mmuller.workshop.repository.UserRepository;
 import com.mmuller.workshop.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,13 @@ public class UserService {
     public User findById(String id) {
         Optional<User> obj = repo.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
+    }
+
+    public User insert(User obj) {
+        return repo.insert(obj);
+    }
+
+    public User fromDTO(UserDTO obj) {
+        return new User(obj.getId(), obj.getName(), obj.getEmail());
     }
 }
