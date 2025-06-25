@@ -1,5 +1,6 @@
 package com.mmuller.workshop.resources;
 
+import com.mmuller.workshop.domain.Post;
 import com.mmuller.workshop.domain.User;
 import com.mmuller.workshop.dto.UserDTO;
 import com.mmuller.workshop.services.UserService;
@@ -53,4 +54,11 @@ public class UserResource {
         obj = userService.update(obj);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+        User obj = userService.findById(id);
+        return ResponseEntity.ok().body(obj.getPosts());
+    }
+
 }
