@@ -3,6 +3,9 @@ package com.mmuller.workshop.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
@@ -14,10 +17,15 @@ public class User implements Serializable {
 
     @Id
     private String id;
+
+    @NotBlank(message = "name must not be blank")
     private String name;
+
+    @Email(message = "Invalid email format")
+    @NotBlank(message = "Email must not be blank")
     private String email;
 
-    public User(){
+    public User() {
     }
 
     public User(String id, String name, String email) {
@@ -52,7 +60,8 @@ public class User implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass())
+            return false;
         User user = (User) o;
         return Objects.equals(id, user.id);
     }

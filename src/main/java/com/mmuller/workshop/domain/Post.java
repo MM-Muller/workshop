@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
+import jakarta.validation.constraints.NotBlank;
 
 @Document
 public class Post implements Serializable {
@@ -13,12 +14,20 @@ public class Post implements Serializable {
 
     @Id
     private String id;
+
+    @NotBlank(message = "Date must not be blank")
     private Date date;
+
+    @NotBlank(message = "Title must not be blank")
     private String title;
+
+    @NotBlank(message = "Body must not be blank")
     private String body;
+
+    @NotBlank(message = "Author must not be blank")
     private User author;
 
-    public Post(){
+    public Post() {
     }
 
     public Post(String id, Date date, String title, String body, User author) {
@@ -71,7 +80,8 @@ public class Post implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Post post = (Post) o;
         return Objects.equals(id, post.id);
     }
